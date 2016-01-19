@@ -1,0 +1,1 @@
+字符串的截取参考网友回答：http://www.thinkphp.cn/code/861.html
