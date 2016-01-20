@@ -164,16 +164,16 @@
                         <a href="__ROOT__"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                      <li>
-                        <a href="__ROOT__/News/newslist.html"><i class="fa fa-fw fa-desktop"></i> 新闻列表</a>
+                        <a href="<?php echo U('news/newslist');?>"><i class="fa fa-fw fa-desktop"></i> 新闻列表</a>
                     </li>
                     <li>
-                        <a href="__ROOT__/News/newsclass.html"><i class="fa fa-fw fa-bar-chart-o"></i> 分类管理</a>
+                        <a href="<?php echo U('news/newsclass');?>"><i class="fa fa-fw fa-bar-chart-o"></i> 分类管理</a>
                     </li>
                     <!-- <li>
                         <a href="1.html"><i class="fa fa-fw fa-table"></i> 文章管理</a>
                     </li> -->
                     <li>
-                        <a href="__ROOT__/User/userlist.html"><i class="fa fa-fw fa-edit"></i> 用户管理</a>
+                        <a href="<?php echo U('user/userlist');?>"><i class="fa fa-fw fa-edit"></i> 用户管理</a>
                     </li>
                     <li>
                         <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> 单页管理</a>
@@ -219,13 +219,25 @@
         <!-- /.row -->
         <div class="row">
             <div class="col-lg-8">
-                <form role="form" action='__URL__/newsadded' method="post">
+                <form role="form" action='__URL__/newsadded' method="post" enctype=”multipart/form-data”>
                     <div class="form-group">
-                        <label>标题</label>
-                        <input class="form-control" name="title">
+                        <label for="title">标题</label>
+                        <input class="form-control" id="title" name="title">
+                    </div>
+					 <div class="form-group">
+                        <label for="newsclass">分类</label>
+                        <select class="form-control">
+							<option>国际新闻</option>
+							<option>娱乐新闻</option>
+							<option>体育新闻</option>
+						</select>
+                    </div>
+					<div class="form-group">
+                        <label for="photo">附件</label>
+                        <input type='file'  id="photo" name='photo'>
                     </div>
                      <div class="form-group">
-                        <label>Text area</label>
+                        <label for="content">Text area</label>
                         <textarea class="form-control" rows="10" name="content"></textarea>
                     </div>
                     <button type="submit" class="btn btn-default">添加</button>

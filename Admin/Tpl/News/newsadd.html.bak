@@ -35,8 +35,8 @@
 						</select>
                     </div>
 					<div class="form-group">
-                        <label for="photo">附件</label>
-                        <input type='file'  id="photo" name='photo'>
+                        <label for="">附件</label>
+                        <input type='file'  name='photo'>
                     </div>
                      <div class="form-group">
                         <label for="content">Text area</label>

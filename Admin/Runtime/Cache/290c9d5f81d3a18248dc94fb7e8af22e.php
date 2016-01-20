@@ -164,16 +164,16 @@
                         <a href="__ROOT__"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                      <li>
-                        <a href="__ROOT__/News/newslist.html"><i class="fa fa-fw fa-desktop"></i> 新闻列表</a>
+                        <a href="<?php echo U('news/newslist');?>"><i class="fa fa-fw fa-desktop"></i> 新闻列表</a>
                     </li>
                     <li>
-                        <a href="__ROOT__/News/newsclass.html"><i class="fa fa-fw fa-bar-chart-o"></i> 分类管理</a>
+                        <a href="<?php echo U('news/newsclass');?>"><i class="fa fa-fw fa-bar-chart-o"></i> 分类管理</a>
                     </li>
                     <!-- <li>
                         <a href="1.html"><i class="fa fa-fw fa-table"></i> 文章管理</a>
                     </li> -->
                     <li>
-                        <a href="__ROOT__/User/userlist.html"><i class="fa fa-fw fa-edit"></i> 用户管理</a>
+                        <a href="<?php echo U('user/userlist');?>"><i class="fa fa-fw fa-edit"></i> 用户管理</a>
                     </li>
                     <li>
                         <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> 单页管理</a>
@@ -203,7 +203,21 @@
 		 <div class="row">
 	                    <div class="col-lg-12">
 	                        <h2>新闻列表</h2>
-	                        <button class="btn btn-info" type="submit" onclick="jumpnewsadd()">添加新闻</button><br><br>
+	                            <div class="row">
+									<div class="col-md-6">
+										<a href="<?php echo U('news/newsadd');?>" class="btn btn-info">添加新闻</a>
+									</div>
+									<div class="col-md-6">
+										<form action="{:U('news/index')}" method="post">
+											<div class="form-group input-group">
+												<input type="text" class="form-control" name="key" placeholder="输入分类标题或者别名关键词搜索">
+												<span class="input-group-btn">
+												  <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+												</span>
+											</div>
+										</form>
+									</div>
+								</div>
 	                        <div class="table-responsive">
 	                            <table class="table table-bordered table-hover table-striped">
 	                                <thead>
