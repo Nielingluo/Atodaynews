@@ -200,34 +200,36 @@
             <!-- /.navbar-collapse -->
         </nav>
 	<div id="page-wrapper">
-		 <div class="row">
-	                    <div class="col-lg-12">
-	                        <h2>新闻分类</h2>
-	                        <button class="btn btn-info" type="submit" onclick="jump()">添加分类</button><br><br>
-	                        <div class="table-responsive">
-	                            <table class="table table-bordered table-hover table-striped">
-	                                <thead>
-	                                    <tr>
-	                                        <th>ID</th>
-	                                        <th>newsclass</th>
-	                                        <th>author</th>
-	                                        <th>Date</th>
-	                                        <th>操作</th>
-	                                    </tr>
-	                                </thead>
-	                                <tbody>
-	                                	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-		                                        <td><?php echo ($vo["id"]); ?></td>
-		                                        <td><?php echo ($vo["newsclass"]); ?></td>
-		                                        <td><?php echo ($vo["author"]); ?></td>
-		                                        <td><?php echo ($vo["date"]); ?></td>
-		                                        <td><a href="#">修改</a> | <a href="#">删除</a></td>
-		                                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-	                                </tbody>
-	                            </table>
-	                        </div>
-	                    </div>
-	     </div>
+		<div class="container-fluid">
+			 <div class="row">
+		                    <div class="col-lg-12">
+		                        <h2>新闻分类</h2>
+		                        <button class="btn btn-info" type="submit" onclick="jump()">添加分类</button><br><br>
+		                        <div class="table-responsive">
+		                            <table class="table table-bordered table-hover table-striped">
+		                                <thead>
+		                                    <tr>
+		                                        <th>ID</th>
+		                                        <th>newsclass</th>
+		                                        <th>author</th>
+		                                        <th>Date</th>
+		                                        <th>操作</th>
+		                                    </tr>
+		                                </thead>
+		                                <tbody>
+		                                	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+			                                        <td><?php echo ($vo["id"]); ?></td>
+			                                        <td><?php echo ($vo["newsclass"]); ?></td>
+			                                        <td><?php echo ($vo["author"]); ?></td>
+			                                        <td><?php echo ($vo["date"]); ?></td>
+			                                        <td><a href="#">修改</a> | <a href="#">删除</a></td>
+			                                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+		                                </tbody>
+		                            </table>
+		                        </div>
+		                    </div>
+		     </div>
+	 	</div>
     </div>
 
     <!-- jQuery -->

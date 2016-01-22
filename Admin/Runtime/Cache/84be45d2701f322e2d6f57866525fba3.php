@@ -201,50 +201,44 @@
         </nav>
 	<div id="page-wrapper">
 		<div class="container-fluid">
-			 <div class="row">
-		                    <div class="col-lg-12">
-		                        <h2>新闻列表</h2>
-		                            <div class="row">
-										<div class="col-md-6">
-											<a href="<?php echo U('news/newsadd');?>" class="btn btn-info">添加新闻</a>
-										</div>
-										<div class="col-md-6">
-											<form action="{:U('news/index')}" method="post">
-												<div class="form-group input-group">
-													<input type="text" class="form-control" name="key" placeholder="输入分类标题或者别名关键词搜索">
-													<span class="input-group-btn">
-													  <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-													</span>
-												</div>
-											</form>
-										</div>
-									</div>
-		                        <div class="table-responsive">
-		                            <table class="table table-bordered table-hover table-striped">
-		                                <thead>
-		                                    <tr>
-		                                        <th>ID</th>
-		                                        <th>title</th>
-		                                        <th>content</th>
-		                                        <th>author</th>
-		                                        <th>Date</th>
-		                                        <th>操作</th>
-		                                    </tr>
-		                                </thead>
-		                                <tbody>
-		                                	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-			                                        <td><?php echo ($vo["id"]); ?></td>
-			                                        <td><?php echo ($vo["title"]); ?></td>
-			                                        <td><?php echo (mb_substr($vo["content"],0,36,'utf-8')); ?></td>
-			                                        <td><?php echo ($vo["author"]); ?></td>
-			                                        <td><?php echo ($vo["date"]); ?></td>
-			                                        <td><a href="__URL__/newsedit/id/<?php echo ($vo["id"]); ?>">修改</a> | <a href="__URL__/newsdelete/id/<?php echo ($vo["id"]); ?>">删除</a></td>
-			                                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-		                                </tbody>
-		                            </table>
-		                        </div>
-		                    </div>
-		     </div>
+			  <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            新闻修改
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="<?php echo U('Index/index');?>">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-edit"></i> Change news
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <form role="form" action="__URL__/newsmodify" method="post">
+							<input type="hidden" name="id" value="<?php echo ($data["id"]); ?>">
+                            <div class="form-group">
+                                <label>标题</label>
+                                <input class="form-control" name="title" value="<?php echo ($data["title"]); ?>">
+                            </div>
+                            <div class="form-group">
+                                <label>内容</label>
+                                <textarea  class="form-control" rows="10" name="content"><?php echo ($data["content"]); ?></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-default">提交</button>
+                            <!-- <button type="reset" class="btn btn-default">重置</button> -->
+
+                        </form>
+
+                    </div>
+                </div>
+                <!-- /.row -->
 	 	</div>
     </div>
 

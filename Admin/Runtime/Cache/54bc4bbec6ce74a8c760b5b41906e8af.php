@@ -200,52 +200,54 @@
             <!-- /.navbar-collapse -->
         </nav>
 	<div id="page-wrapper">
-		<!-- Page Heading -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">
-                    添加文章
-                </h1>
-                <ol class="breadcrumb">
-                    <li>
-                        <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                    </li>
-                    <li class="active">
-                        <i class="fa fa-edit"></i> Add Article
-                    </li>
-                </ol>
+        <div class="container-fluid">
+    		<!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        添加文章
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-edit"></i> Add Article
+                        </li>
+                    </ol>
+                </div>
             </div>
-        </div>
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-lg-8">
-                <form role="form" action='__URL__/newsadded' method="post" enctype=”multipart/form-data”>
-                    <div class="form-group">
-                        <label for="title">标题</label>
-                        <input class="form-control" id="title" name="title">
-                    </div>
-					 <div class="form-group">
-                        <label for="newsclass">分类</label>
-                        <select class="form-control">
-							<option>国际新闻</option>
-							<option>娱乐新闻</option>
-							<option>体育新闻</option>
-						</select>
-                    </div>
-					<div class="form-group">
-                        <label for="photo">附件</label>
-                        <input type='file'  id="photo" name='photo'>
-                    </div>
-                     <div class="form-group">
-                        <label for="content">Text area</label>
-                        <textarea class="form-control" rows="10" name="content"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-default">添加</button>
-                    <button type="reset" class="btn btn-default">重置</button>
-                </form>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <form role="form" action='__URL__/newsadded' method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="title">标题</label>
+                            <input class="form-control" id="title" name="title">
+                        </div>
+    					 <div class="form-group">
+                            <label for="newsclass">分类</label>
+                            <select class="form-control" name="newsclass">
+    							<option>国际新闻</option>
+    							<option>娱乐新闻</option>
+    							<option>体育新闻</option>
+    						</select>
+                        </div>
+    					<div class="form-group">
+                            <label for="photo">附件</label>
+                            <input type='file'  id="photo" name='photo'>
+                        </div>
+                         <div class="form-group">
+                            <label for="content">Text area</label>
+                            <textarea class="form-control" rows="10" name="content"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-default">添加</button>
+                        <button type="reset" class="btn btn-default">重置</button>
+                    </form>
+                </div>
             </div>
+    	      <!-- /.row -->
         </div>
-	      <!-- /.row -->
     </div>
 
     <!-- jQuery -->

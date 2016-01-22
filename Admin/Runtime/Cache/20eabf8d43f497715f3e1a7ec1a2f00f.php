@@ -139,7 +139,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo (session('username')); ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -152,7 +152,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="__APP__/Login/dologout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -163,17 +163,17 @@
                     <li class="active">
                         <a href="__ROOT__"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
-                     <li><?php echo U('News/newsadd');?>
+                     <li>
                         <a href="<?php echo U('news/newslist');?>"><i class="fa fa-fw fa-desktop"></i> 新闻列表</a>
                     </li>
                     <li>
-                        <a href="__ROOT__/News/newsclass.html"><i class="fa fa-fw fa-bar-chart-o"></i> 分类管理</a>
+                        <a href="<?php echo U('news/newsclass');?>"><i class="fa fa-fw fa-bar-chart-o"></i> 分类管理</a>
                     </li>
                     <!-- <li>
                         <a href="1.html"><i class="fa fa-fw fa-table"></i> 文章管理</a>
                     </li> -->
                     <li>
-                        <a href="__ROOT__/User/userlist.html"><i class="fa fa-fw fa-edit"></i> 用户管理</a>
+                        <a href="<?php echo U('user/userlist');?>"><i class="fa fa-fw fa-edit"></i> 用户管理</a>
                     </li>
                     <li>
                         <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> 单页管理</a>
@@ -193,7 +193,7 @@
                         <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
                     </li>
                     <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                        <a href="<?php echo U('Register/register');?>"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                     </li>
                 </ul>
             </div>
@@ -334,7 +334,6 @@
                     </div>
                 </div>
                
-
             </div>
             <!-- /.container-fluid -->
 

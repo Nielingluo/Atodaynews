@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>TodayNews Admin</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="__PUBLIC__/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="__PUBLIC__/css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="__PUBLIC__/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- add user -->
+     <script>
+        var error = new Array();  //看准位置啊！！！
+        $(function(){
+              $('input[name="username"]').blur(function(){
+                alert(1);
+             /* var username=$(this).val();
+              //alert(username);
+              $.get('__URL__/checkName',{'username':username},function(data){
+                  if(data=="不允许"){ 
+                  error['username']= 1;
+                    $('input[name="username"]').after('<p id="umessage" style="color:red">该用户已经注册</p>');
+                  }else{
+                    error['username']= 0;
+                    $('#umessage').remove();
+                  }
+
+              });
+            });*/
+
+            //提交表单
+          /* $('button[name="reg"]').click(function(){
+            if(error['username']==1){
+               return false;
+             }else{
+                $('form[id="myForm"]').submit();
+             }      
+          });*/
+        });
+    </script>
+    <!-- add user -->
+
+</head>
+<body>
+	<div id="page-wrapper">
+        <div class="container-fluid">
+            <!-- /.row -->
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-3">
+                        <h1>用户注册页面</h1> 
+                        <a href="<{:U('Index/index')}>"><input class="btn btn-info btn-sm" type="button"  value="返回首页"></a><br/><br/>
+                        <form action='__URL__/user_register' method='post' name='myForm'>
+                          <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="text" class="form-control" name="email" placeholder="email">
+                          </div>
+                          <div class="form-group">
+                            <label for="username">用户名</label>
+                            <input type="text" class="form-control" name="username" placeholder="username">
+                          </div>
+                          <div class="form-group" >
+                            <label for="Password">密码</label>
+                            <input type="password" class="form-control" name="password" placeholder="Password">
+                          </div>
+                           <div class="form-group" >
+                            <label for="rePassword">确认密码</label>
+                            <input type="password" class="form-control" name="repassword" placeholder="rePassword">
+                          </div> 
+                          <div class="row">
+                            <div class="col-lg-8">
+                                <div class="form-group" >
+                                  <label for="exampleInputPassword1">验证码</label>
+                                  <input type="text" class="form-control" name="verify">
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group" style="margin-top:20px;">
+                                  <img src="__APP__/Public/verify" onclick='this.src=this.src+"?"+Math.random()' width="90" height="40"/>
+                                </div>
+                            </div>
+                          </div>
+                         <button type="submit" class="btn btn-default" name="reg">提交</button> 
+                          <a href="__APP__/Login/login"><button type="button" class="btn btn-default">登陆</button></a>
+                      </form>
+                                
+                    </div>
+                </div>
+    	      <!-- /.row -->
+        </div>
+    </div>
+<include file="Public:footer" />
