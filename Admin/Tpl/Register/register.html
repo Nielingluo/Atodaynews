@@ -19,20 +19,14 @@
     <!-- Custom Fonts -->
     <link href="__PUBLIC__/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- add user -->
-     <script>
+    <load href="__PUBLIC__/js/jquery.js"/>
+    <!-- <load href="__JS__/jquery.js">  //标签不闭合 随能正常引用 但下面的alert（）不能正常弹出 -->
+    <script>
         var error = new Array();  //看准位置啊！！！
         $(function(){
               $('input[name="username"]').blur(function(){
-                alert(1);
-             /* var username=$(this).val();
+              //alert(1);
+              var username=$(this).val();
               //alert(username);
               $.get('__URL__/checkName',{'username':username},function(data){
                   if(data=="不允许"){ 
@@ -44,19 +38,27 @@
                   }
 
               });
-            });*/
+            });
 
             //提交表单
-          /* $('button[name="reg"]').click(function(){
+           $('button[name="reg"]').click(function(){
             if(error['username']==1){
                return false;
              }else{
                 $('form[id="myForm"]').submit();
              }      
-          });*/
+          });
         });
     </script>
-    <!-- add user -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 
 </head>
 <body>
@@ -106,4 +108,3 @@
     	      <!-- /.row -->
         </div>
     </div>
-<include file="Public:footer" />

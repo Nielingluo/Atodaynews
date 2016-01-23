@@ -32,9 +32,7 @@
 
     <!-- add user -->
     <script type="text/javascript">
-        function jump(){
-            window.location="/Ashop/index.php/User/add";
-        }
+
         function jumpnewsadd(){
             window.location="__URL__/newsadd";
         }
@@ -139,7 +137,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo (session('username')); ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -152,7 +150,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="__APP__/Login/dologout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -161,7 +159,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="__ROOT__"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="__ROOT__"><i class="fa fa-fw fa-dashboard"></i> 首页</a>
                     </li>
                      <li>
                         <a href="<?php echo U('news/newslist');?>"><i class="fa fa-fw fa-desktop"></i> 新闻列表</a>
@@ -193,7 +191,7 @@
                         <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
                     </li>
                     <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                        <a href="<?php echo U('Register/register');?>"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                     </li>
                 </ul>
             </div>
@@ -204,7 +202,21 @@
 			 <div class="row">
 		                    <div class="col-lg-12">
 		                        <h2>新闻分类</h2>
-		                        <button class="btn btn-info" type="submit" onclick="jump()">添加分类</button><br><br>
+		                         <div class="row">
+									<div class="col-md-6">
+										 <a href="<?php echo U('news/newsclassadd');?>" class="btn btn-info">添加分类</a>
+									</div>
+									<div class="col-md-6">
+										<form action="{:U('news/index')}" method="post">
+											<div class="form-group input-group">
+												<input type="text" class="form-control" name="key" placeholder="输入分类标题或者别名关键词搜索">
+												<span class="input-group-btn">
+												  <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+												</span>
+											</div>
+										</form>
+									</div>
+								</div>
 		                        <div class="table-responsive">
 		                            <table class="table table-bordered table-hover table-striped">
 		                                <thead>
@@ -220,9 +232,9 @@
 		                                	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
 			                                        <td><?php echo ($vo["id"]); ?></td>
 			                                        <td><?php echo ($vo["newsclass"]); ?></td>
-			                                        <td><?php echo ($vo["author"]); ?></td>
+			                                        <td><?php echo (session('username')); ?></td>
 			                                        <td><?php echo ($vo["date"]); ?></td>
-			                                        <td><a href="#">修改</a> | <a href="#">删除</a></td>
+			                                        <td><a href="__URL__/newsclassedit/id/<?php echo ($vo["id"]); ?>">修改</a> | <a href="__URL__/del/id/<?php echo ($vo["id"]); ?>">删除</a></td>
 			                                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 		                                </tbody>
 		                            </table>

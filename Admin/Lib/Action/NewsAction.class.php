@@ -14,10 +14,6 @@
 		}
 		public function newsadded(){
 			$m=D('News');
-			/*$m->title=$_POST['title'];
-			$m->content=$_POST['content'];
-			$m->newsclass=$_POST['newsclass'];
-			*/
 			//上传图片
 			import('ORG.Net.UploadFile');
 			$upload = new UploadFile();// 实例化上传类
@@ -59,7 +55,7 @@
 			if($idnum){
 				$this->success('新闻修改成功，跳转中……',U('News/newslist'));
 			}else{
-				$this-error('修改出错，请稍候重试');
+				$this->error('修改出错，请稍候重试');
 			}
 		}
 
@@ -77,6 +73,7 @@
 
 		}
 
+		/*————————————————————————————————————————————分类页————————————————————————————————————————————————*/
 
 		/*新闻分类页*/
 		public function newsclass(){
@@ -85,6 +82,52 @@
 			$this->assign('list',$lclass);
 			$this->display();
 		}
+
+		/*新增分类*/
+		public function newsclassadd(){
+			$this->display();
+		}
+		public function newsclassadded(){
+			$m=D('newsclass');
+			$m->create();
+			$idnum=$m->add();
+			if($idnum>0){
+				$this->success('成功添加分类，跳转中……',U('news/newsclass'));
+			}else{
+				$this->error('添加失败，请稍候重试');
+			}
+		}
+		/*删除新闻分类*/
+		public function del(){
+			$m=M('Newsclass');
+			$id=$_GET['id'];
+			$count=$m->delete($id);
+			if($count>0){
+				$this->success('分类删除成功');
+			}else{
+				$this->error('分类删除失败');
+			}
+		}
+		/*修改分类*/
+		public function newsclassedit(){
+			$m=M('Newsclass');
+			$id=$_GET['id'];
+			$arr=$m->find($id);
+			$this->assign('data',$arr);
+			$this->display();
+		}
+		public function newsclassmodify(){
+			$m=M('Newsclass');
+			$data['id']=$_POST['id'];
+			$data['newsclass']=$_POST['newsclass'];
+			$idnum=$m->save($data);
+			if($idnum){
+				$this->success('分类修改成功，跳转中……',U('News/newsclass'));
+			}else{
+				$this->error('修改出错，请稍候重试');
+			}
+		}
+		 
 
 	}
 
