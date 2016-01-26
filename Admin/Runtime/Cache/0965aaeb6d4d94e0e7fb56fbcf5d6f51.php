@@ -197,51 +197,39 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
-	<div id="page-wrapper">
-		<div class="container-fluid">
-			 <div class="row">
-		                    <div class="col-lg-12">
-		                        <h2>新闻分类</h2>
-		                         <div class="row">
-									<div class="col-md-6">
-										 <a href="<?php echo U('news/newsclassadd');?>" class="btn btn-info">添加分类</a>
-									</div>
-									<div class="col-md-6">
-										<form action="<?php echo U('news/classsearch');?>" method="post">
-											<div class="form-group input-group">
-												<input type="text" class="form-control" name="classname" placeholder="输入分类标题或者别名关键词搜索">
-												<span class="input-group-btn">
-												  <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-												</span>
-											</div>
-										</form>
-									</div>
-								</div>
-		                        <div class="table-responsive">
-		                            <table class="table table-bordered table-hover table-striped">
-		                                <thead>
-		                                    <tr>
-		                                        <th>ID</th>
-		                                        <th>newsclass</th>
-		                                        <th>author</th>
-		                                        <th>Date</th>
-		                                        <th>操作</th>
-		                                    </tr>
-		                                </thead>
-		                                <tbody>
-		                                	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-			                                        <td><?php echo ($vo["id"]); ?></td>
-			                                        <td><?php echo ($vo["newsclass"]); ?></td>
-			                                        <td><?php echo (session('username')); ?></td>
-			                                        <td><?php echo (date('Y/m/d H:i:s',$vo["date"])); ?></td>
-			                                        <td><a href="__URL__/newsclassedit/id/<?php echo ($vo["id"]); ?>">修改</a> | <a href="__URL__/del/id/<?php echo ($vo["id"]); ?>">删除</a></td>
-			                                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-		                                </tbody>
-		                            </table>
-		                        </div>
-		                    </div>
-		     </div>
-	 	</div>
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        添加文章分类
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-edit"></i> Add News-Class
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <form role="form" action='__URL__/newsclassadded' method="post">
+                        <div class="form-group">
+                            <label for="newsclass">分类</label>
+                            <input class="form-control" id="title" name="newsclass">
+                        </div>
+                        <button type="submit" class="btn btn-default">添加</button>
+                        <button type="reset" class="btn btn-default">重置</button>
+                    </form>
+                </div>
+            </div>
+              <!-- /.row -->
+        </div>
     </div>
 
     <!-- jQuery -->

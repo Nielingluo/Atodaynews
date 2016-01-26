@@ -11,11 +11,11 @@
 											<a href="<{:U('news/newsadd')}>" class="btn btn-info">添加新闻</a>
 										</div>
 										<div class="col-md-6">
-											<form action="{:U('news/index')}" method="post">
+											<form action="<{:U('news/search')}>" method="post">
 												<div class="form-group input-group">
-													<input type="text" class="form-control" name="key" placeholder="输入分类标题或者别名关键词搜索">
+													<input type="text" class="form-control" name="title" placeholder="输入文章标题或者文章关键词搜索">
 													<span class="input-group-btn">
-													  <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+													  <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
 													</span>
 												</div>
 											</form>
@@ -40,13 +40,14 @@
 			                                        <td><{$vo.title}></td>
 			                                        <td><{$vo.content|mb_substr=###,0,36,'utf-8'}></td>
 			                                        <td><{$Think.session.username}></td>
-			                                        <td><{$vo.date}></td>
+			                                        <td><{$vo.date|date='Y/m/d H:i:s',###}></td>
 			                                        <td><a href="__URL__/newsedit/id/<{$vo.id}>">修改</a> | <a href="__URL__/newsdelete/id/<{$vo.id}>">删除</a></td>
 			                                    </tr>
 		                                    </volist>
 		                                </tbody>
 		                            </table>
 		                        </div>
+		                        <div><{$page}></div>
 		                    </div>
 		     </div>
 	 	</div>

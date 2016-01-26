@@ -3,10 +3,20 @@
 		/*新闻列表页*/
 		public function newslist(){
 			$m=M('News');
-			$list=$m->order('id desc')->select();
+			import('ORG.Util.Page');// 导入分页类
+			$count = $m->count();// 查询满足要求的总记录数
+			$page  = new Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
+			$show  = $page->show();// 分页显示输出
+			$list=$m->order('id desc')->limit($page->firstRow.','.$page->listRows)->select();
 			//dump($list);
 			$this->assign('list',$list);
-			$this->display();
+			$this->assign('page',$show);// 赋值分页输出
+			//判断用户是否登陆 session
+			if(isset($_SESSION['username']) && $_SESSION['username'] != ''){
+				$this->display();
+			}else{
+				$this->redirect('Login/login');
+			}
 		}
 		/*添加新闻*/
 		public function newsadd(){
@@ -73,6 +83,17 @@
 
 		}
 
+		/*查询新闻*/
+		public function search(){
+			$news['title']=array('like',"%{$_POST['title']}%");
+			$m=M('News');
+			$arr=$m->where($news)->select();
+			$this->assign('data',$arr);
+			$this->display('index');
+			//$this->assign('data',$);
+
+		}
+
 		/*————————————————————————————————————————————分类页————————————————————————————————————————————————*/
 
 		/*新闻分类页*/
@@ -88,8 +109,9 @@
 			$this->display();
 		}
 		public function newsclassadded(){
-			$m=D('newsclass');
+			$m=D('Newsclass');
 			$m->create();
+			$m->date=time();  //数据库插入当前时间
 			$idnum=$m->add();
 			if($idnum>0){
 				$this->success('成功添加分类，跳转中……',U('news/newsclass'));
@@ -126,6 +148,15 @@
 			}else{
 				$this->error('修改出错，请稍候重试');
 			}
+		}
+
+		/*查询新闻分类*/
+		public function classsearch(){
+			$where['newsclass']=array('like',"%{$_POST['classname']}%");
+			$m=M('Newsclass');
+			$arr=$m->where($where)->select();
+			$this->assign('list',$arr);
+			$this->display('index');
 		}
 		 
 

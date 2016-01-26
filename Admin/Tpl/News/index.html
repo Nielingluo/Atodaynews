@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>您所查询的内容：</div><br/>
+	<volist name="data" id="vo">
+		<h2>标题：<{$vo.title}></h2>
+	</volist>
+	<volist name="list" id="vo">
+		<h4>新闻分类搜索查询结果:<{$vo.newsclass}></h4>
+	</volist>
+	
+</body>
+</html>
