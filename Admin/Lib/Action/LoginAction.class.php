@@ -15,7 +15,7 @@
 			$where['username']=$username;
 			$where['password']=$password;
 			$arr=$m->where($where)->find();
-			//dump($i);
+			//dump($arr['id']);exit;
 			if($arr){
 				$_SESSION['username']=$username;
 				$_SESSION['id']=$arr['id'];

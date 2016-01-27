@@ -84,14 +84,12 @@
 		}
 
 		/*查询新闻*/
-		public function search(){
+		public function newssearch(){
 			$news['title']=array('like',"%{$_POST['title']}%");
 			$m=M('News');
 			$arr=$m->where($news)->select();
 			$this->assign('data',$arr);
-			$this->display('index');
-			//$this->assign('data',$);
-
+			$this->display('newssearch');
 		}
 
 		/*————————————————————————————————————————————分类页————————————————————————————————————————————————*/
@@ -156,7 +154,7 @@
 			$m=M('Newsclass');
 			$arr=$m->where($where)->select();
 			$this->assign('list',$arr);
-			$this->display('index');
+			$this->display('newclasssearch');
 		}
 		 
 

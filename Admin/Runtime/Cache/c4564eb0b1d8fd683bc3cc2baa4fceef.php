@@ -230,7 +230,7 @@
 		                                    </tr>
 		                                </thead>
 		                                <tbody>
-		                                	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+		                                	<?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
 			                                        <td><?php echo ($vo["id"]); ?></td>
 			                                        <td><?php echo ($vo["title"]); ?></td>
 			                                        <td><?php echo (mb_substr($vo["content"],0,36,'utf-8')); ?></td>

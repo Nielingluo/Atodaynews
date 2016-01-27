@@ -198,53 +198,46 @@
             <!-- /.navbar-collapse -->
         </nav>
 	<div id="page-wrapper">
-		<div class="container-fluid">
-			 <div class="row">
-		                    <div class="col-lg-12">
-		                        <h2>新闻列表</h2>
-		                            <div class="row">
-										<div class="col-md-6">
-											<a href="<?php echo U('news/newsadd');?>" class="btn btn-info">添加新闻</a>
+		 <div class="row">
+	                    <div class="col-lg-12">
+	                        <h2>用户管理</h2>
+	                         <div class="row">
+								<div class="col-md-6">
+									<a href="<?php echo U('user/useradd');?>" class="btn btn-info">新增用户</a>
+								</div>
+								<div class="col-md-6">
+									<form action="<?php echo U('user/usersearch');?>" method="post">
+										<div class="form-group input-group">
+											<input type="text" class="form-control" name="username" placeholder="输入分类标题或者别名关键词搜索">
+											<span class="input-group-btn">
+											  <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+											</span>
 										</div>
-										<div class="col-md-6">
-											<form action="<?php echo U('news/newssearch');?>" method="post">
-												<div class="form-group input-group">
-													<input type="text" class="form-control" name="title" placeholder="输入文章标题或者文章关键词搜索">
-													<span class="input-group-btn">
-													  <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-													</span>
-												</div>
-											</form>
-										</div>
-									</div>
-		                        <div class="table-responsive">
-		                            <table class="table table-bordered table-hover table-striped">
-		                                <thead>
-		                                    <tr>
-		                                        <th>ID</th>
-		                                        <th>title</th>
-		                                        <th>content</th>
-		                                        <th>author</th>
-		                                        <th>Date</th>
-		                                        <th>操作</th>
-		                                    </tr>
-		                                </thead>
-		                                <tbody>
-		                                	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-			                                        <td><?php echo ($vo["id"]); ?></td>
-			                                        <td><?php echo ($vo["title"]); ?></td>
-			                                        <td><?php echo (mb_substr($vo["content"],0,36,'utf-8')); ?></td>
-			                                        <td><?php echo (session('username')); ?></td>
-			                                        <td><?php echo (date('Y/m/d H:i:s',$vo["date"])); ?></td>
-			                                        <td><a href="__URL__/newsedit/id/<?php echo ($vo["id"]); ?>">修改</a> | <a href="__URL__/newsdelete/id/<?php echo ($vo["id"]); ?>">删除</a></td>
-			                                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-		                                </tbody>
-		                            </table>
-		                        </div>
-		                        <div><?php echo ($page); ?></div>
-		                    </div>
-		     </div>
-	 	</div>
+									</form>
+								</div>
+							</div>
+	                        <div class="table-responsive">
+	                            <table class="table table-bordered table-hover table-striped">
+	                                <thead>
+	                                    <tr>
+	                                        <th>ID</th>
+	                                        <th>用户名</th>
+	                                        <th>性别</th>
+	                                        <th>操作</th>
+	                                    </tr>
+	                                </thead>
+	                                <tbody>
+	                                	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+		                                        <td><?php echo ($vo["id"]); ?></td>
+		                                        <td><?php echo ($vo["username"]); ?></td>
+		                                        <td><?php if($vo["sex"] == 1): ?>男<?php else: ?>女<?php endif; ?></td>
+		                                        <td><a href="__URL__/modify/id/<?php echo ($vo["id"]); ?>">修改</a> | <a href="__URL__/del/id/<?php echo ($vo["id"]); ?>">删除</a></td>
+		                                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+	                                </tbody>
+	                            </table>
+	                        </div>
+	                    </div>
+	     </div>
     </div>
 
     <!-- jQuery -->

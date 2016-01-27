@@ -11,6 +11,8 @@
 			$this->assign('list',$ulist);
 			$this->display();
 		}
+
+
 		/*添加用户*/
 		public function useradd(){
 			$this->display();
@@ -37,6 +39,13 @@
 			}else{
 				$this->error('数据删除失败');
 			}
+		}
+		public function usersearch(){
+			$user['username']=array('like',"%{$_POST['username']}%");
+			$m = M('User');
+			$arr=$m->where($user)->select();
+			$this->assign('list',$arr);
+			$this->display();
 		}
 
 			
