@@ -173,25 +173,27 @@
                     <li>
                         <a href="<?php echo U('user/userlist');?>"><i class="fa fa-fw fa-edit"></i> 用户管理</a>
                     </li>
+                 <!--
+                 暂时注释于2016/2/13 
                     <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> 单页管理</a>
-                    </li>
+                     <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> 单页管理</a>
+                 </li>
+                 <li>
+                     <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                     <ul id="demo" class="collapse">
+                         <li>
+                             <a href="#">Dropdown Item</a>
+                         </li>
+                         <li>
+                             <a href="#">Dropdown Item</a>
+                         </li>
+                     </ul>
+                 </li>
+                 <li>
+                     <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                 </li> -->
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Register/register');?>"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                        <a href="<?php echo U('Register/register');?>"><i class="fa fa-fw fa-dashboard"></i> 注册</a>
                     </li>
                 </ul>
             </div>
@@ -222,6 +224,7 @@
 	                                    <tr>
 	                                        <th>ID</th>
 	                                        <th>用户名</th>
+	                                        <th>注册时间</th>
 	                                        <th>性别</th>
 	                                        <th>操作</th>
 	                                    </tr>
@@ -230,8 +233,9 @@
 	                                	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
 		                                        <td><?php echo ($vo["id"]); ?></td>
 		                                        <td><?php echo ($vo["username"]); ?></td>
+		                                        <td><?php echo (date('Y/m/d H:i:s',$vo["regdate"])); ?></td>
 		                                        <td><?php if($vo["sex"] == 1): ?>男<?php else: ?>女<?php endif; ?></td>
-		                                        <td><a href="__URL__/modify/id/<?php echo ($vo["id"]); ?>">修改</a> | <a href="__URL__/del/id/<?php echo ($vo["id"]); ?>">删除</a></td>
+		                                        <td><a href="__URL__/user_modify/id/<?php echo ($vo["id"]); ?>">修改</a> | <a href="__URL__/del/id/<?php echo ($vo["id"]); ?>">删除</a></td>
 		                                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 	                                </tbody>
 	                            </table>

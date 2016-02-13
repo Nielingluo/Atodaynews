@@ -5,7 +5,7 @@
 		}
 		public function do_login(){
 			$username=$_POST['username'];
-			$password=$_POST['password'];
+			$password=md5($_POST['password']);
 			$verify=$_POST['verify'];
 			if($_SESSION['verify'] !== md5($verify)) {
    				$this->error('验证码错误！');

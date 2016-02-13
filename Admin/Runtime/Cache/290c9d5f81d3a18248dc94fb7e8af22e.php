@@ -173,25 +173,27 @@
                     <li>
                         <a href="<?php echo U('user/userlist');?>"><i class="fa fa-fw fa-edit"></i> 用户管理</a>
                     </li>
+                 <!--
+                 暂时注释于2016/2/13 
                     <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> 单页管理</a>
-                    </li>
+                     <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> 单页管理</a>
+                 </li>
+                 <li>
+                     <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                     <ul id="demo" class="collapse">
+                         <li>
+                             <a href="#">Dropdown Item</a>
+                         </li>
+                         <li>
+                             <a href="#">Dropdown Item</a>
+                         </li>
+                     </ul>
+                 </li>
+                 <li>
+                     <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                 </li> -->
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo U('Register/register');?>"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                        <a href="<?php echo U('Register/register');?>"><i class="fa fa-fw fa-dashboard"></i> 注册</a>
                     </li>
                 </ul>
             </div>
@@ -221,11 +223,11 @@
 		                            <table class="table table-bordered table-hover table-striped">
 		                                <thead>
 		                                    <tr>
-		                                        <th>ID</th>
-		                                        <th>title</th>
-		                                        <th>content</th>
-		                                        <th>author</th>
-		                                        <th>Date</th>
+		                                        <th>编号</th>
+		                                        <th>标题</th>
+		                                        <th>分类</th>
+		                                        <th>作者</th>
+		                                        <th>发布时间</th>
 		                                        <th>操作</th>
 		                                    </tr>
 		                                </thead>
@@ -233,7 +235,8 @@
 		                                	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
 			                                        <td><?php echo ($vo["id"]); ?></td>
 			                                        <td><?php echo ($vo["title"]); ?></td>
-			                                        <td><?php echo (mb_substr($vo["content"],0,36,'utf-8')); ?></td>
+			                                        <!-- <td><?php echo (mb_substr($vo["content"],0,36,'utf-8')); ?></td> -->
+			                                        <td><?php echo ($vo["newsclass"]); ?></td>
 			                                        <td><?php echo (session('username')); ?></td>
 			                                        <td><?php echo (date('Y/m/d H:i:s',$vo["date"])); ?></td>
 			                                        <td><a href="__URL__/newsedit/id/<?php echo ($vo["id"]); ?>">修改</a> | <a href="__URL__/newsdelete/id/<?php echo ($vo["id"]); ?>">删除</a></td>

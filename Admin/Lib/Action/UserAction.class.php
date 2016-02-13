@@ -19,7 +19,11 @@
 		}
 		public function usercreate(){
 			$m=D('User');
-			$m->create();
+			if($m->create()){
+				$m->regdate = time();
+			}else{
+				$this->error($m->getError().' [ <a href="javascript:history.back()">返 回</a> ]');
+			}
 			$idnum=$m->add();
 			if($idnum>0){
 				$this->success('成功添加一名用户，跳转中……',U('user/userlist'));
@@ -48,6 +52,10 @@
 			$this->display();
 		}
 
+		/*用户修改*/
+		public function user_modify(){
+
+		}
 			
 	}
 ?>

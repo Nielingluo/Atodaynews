@@ -6,7 +6,10 @@
 
 		public function user_register(){
 			$m=D('User');
-			if(!$m->create()){
+			if($m->create()){
+				$m->password = md5($_POST["password"]);
+				$m->regdate = time();
+			}else{
 				$this->error($m->getError());
 			}
 			$idnum=$m->add();
