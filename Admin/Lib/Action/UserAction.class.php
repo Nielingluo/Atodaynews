@@ -53,8 +53,24 @@
 		}
 
 		/*用户修改*/
-		public function user_modify(){
+		public function user_edit(){
+			$id=$_GET['id'];
+			$m=M('user');
+			$arr=$m->find($id);
+			$this->assign('list',$arr);
+			$this->display();
+		}
 
+		public function user_modify(){
+			$m=M('User');
+			$list['id']=$_POST['id'];
+			$list['username']=$_POST['username'];
+			$idnum=$m->save($list);
+			if($idnum){
+				$this->success('用户修改成功，跳转中……',U('User/userlist'));
+			}else{
+				$this->error('修改出错，请稍候重试');
+			}
 		}
 			
 	}

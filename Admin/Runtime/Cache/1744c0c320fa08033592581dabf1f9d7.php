@@ -200,54 +200,39 @@
             <!-- /.navbar-collapse -->
         </nav>
 	<div id="page-wrapper">
-        <div class="container-fluid">
-    		<!-- Page Heading -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">
-                        添加文章
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li>
-                            <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                        </li>
-                        <li class="active">
-                            <i class="fa fa-edit"></i> Add Article
-                        </li>
-                    </ol>
+		<div class="container-fluid">
+			  <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            用户修改
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="<?php echo U('Index/index');?>">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-edit"></i> user_edit
+                            </li>
+                        </ol>
+                    </div>
                 </div>
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-8">
-                    <form role="form" action='__URL__/newsadded' method="post" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="title">标题</label>
-                            <input class="form-control" id="title" name="title">
-                        </div>
-    					 <div class="form-group">
-                            <label for="newsclass">分类</label>
-                            <select class="form-control" name="newsclass">
-    							<option>国际新闻</option>
-    							<option>娱乐新闻</option>
-    							<option>体育新闻</option>
-    						</select>
-                        </div>
-    					<div class="form-group">
-                            <label for="photo">附件</label>
-                            <input type='file'  id="photo" name='photo'>
-                        </div>
-                         <div class="form-group">
-                            <label for="content">Text area</label>
-                            <textarea class="form-control" rows="10" name="content"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-default">添加</button>
-                        <button type="reset" class="btn btn-default">重置</button>
-                    </form>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <form role="form" action="__URL__/newsmodify" method="post">
+							<input type="hidden" name="id" value="<?php echo ($data["id"]); ?>">
+                            <div class="form-group">
+                                <label>用户名</label>
+                                <input class="form-control" name="username" value="<?php echo ($data["username"]); ?>">
+                            </div>
+                            <button type="submit" class="btn btn-default">提交</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-    	      <!-- /.row -->
-        </div>
+                <!-- /.row -->
+	 	</div>
     </div>
 
     <!-- jQuery -->

@@ -235,7 +235,7 @@
 		                                        <td><?php echo ($vo["username"]); ?></td>
 		                                        <td><?php echo (date('Y/m/d H:i:s',$vo["regdate"])); ?></td>
 		                                        <td><?php if($vo["sex"] == 1): ?>男<?php else: ?>女<?php endif; ?></td>
-		                                        <td><a href="__URL__/user_modify/id/<?php echo ($vo["id"]); ?>">修改</a> | <a href="__URL__/del/id/<?php echo ($vo["id"]); ?>">删除</a></td>
+		                                        <td><a href="__URL__/user_edit/id/<?php echo ($vo["id"]); ?>">修改</a> | <a href="__URL__/del/id/<?php echo ($vo["id"]); ?>">删除</a></td>
 		                                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 	                                </tbody>
 	                            </table>

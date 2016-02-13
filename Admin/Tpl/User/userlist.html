@@ -38,7 +38,7 @@
 		                                        <td><{$vo.username}></td>
 		                                        <td><{$vo.regdate|date='Y/m/d H:i:s',###}></td>
 		                                        <td><if condition='$vo.sex eq 1'>男<else />女</if></td>
-		                                        <td><a href="__URL__/user_modify/id/<{$vo.id}>">修改</a> | <a href="__URL__/del/id/<{$vo.id}>">删除</a></td>
+		                                        <td><a href="__URL__/user_edit/id/<{$vo.id}>">修改</a> | <a href="__URL__/del/id/<{$vo.id}>">删除</a></td>
 		                                    </tr>
 	                                    </volist>
 	                                </tbody>
