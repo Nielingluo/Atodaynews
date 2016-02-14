@@ -199,6 +199,16 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
+<script type="text/javascript">
+   window.onload=function(){
+            //alert('<?php echo ($list["sex"]); ?>');
+            if(<?php echo ($list["sex"]); ?>==0){
+                document.getElementsByName('sex')[1].checked='checked';
+            }else{
+                document.getElementsByName('sex')[0].checked='checked';
+            }
+        }
+</script>
 	<div id="page-wrapper">
 		<div class="container-fluid">
 			  <!-- Page Heading -->
@@ -227,6 +237,19 @@
                                 <label>用户名</label>
                                 <input class="form-control" name="username" value="<?php echo ($list["username"]); ?>">
                             </div>
+                            <div class="form-group">
+                                <label>性别</label>
+                                <div class="radio">
+                                  <label>
+                                      <input type="radio" name="sex" value="1">男
+                                  </label>
+                                </div>
+                                <div class="radio">
+                                  <label>
+                                      <input type="radio" name="sex" value="0">女
+                                  </label>
+                                 </div>
+                                </div> 
                             <button type="submit" class="btn btn-default">提交</button>
                         </form>
                     </div>

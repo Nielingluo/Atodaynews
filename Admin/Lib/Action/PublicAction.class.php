@@ -4,5 +4,8 @@
 		    import('ORG.Util.Image');
 		    Image::buildImageVerify();
 		}
+		Public function error(){
+			$this->display();
+		}
 	}
 ?>

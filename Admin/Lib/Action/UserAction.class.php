@@ -65,6 +65,7 @@
 			$m=M('User');
 			$list['id']=$_POST['id'];
 			$list['username']=$_POST['username'];
+			$list['sex']=$_POST['sex'];
 			$idnum=$m->save($list);
 			if($idnum){
 				$this->success('用户修改成功，跳转中……',U('User/userlist'));

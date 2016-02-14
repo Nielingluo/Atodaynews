@@ -1,0 +1,71 @@
+[ 2016-02-14T21:15:19+08:00 ] ERR: (ThinkException) 非法操作:__css__
+[ 2016-02-14T21:15:19+08:00 ] ERR: (ThinkException) 非法操作:__js__
+[ 2016-02-14T21:15:19+08:00 ] ERR: (ThinkException) 非法操作:__images__
+[ 2016-02-14T21:18:22+08:00 ] ERR: (ThinkException) 非法操作:__css__
+[ 2016-02-14T21:18:22+08:00 ] ERR: (ThinkException) 非法操作:__js__
+[ 2016-02-14T21:18:22+08:00 ] ERR: (ThinkException) 非法操作:__images__
+[ 2016-02-14T21:18:24+08:00 ] ERR: (ThinkException) 非法操作:__css__
+[ 2016-02-14T21:18:24+08:00 ] ERR: (ThinkException) 非法操作:__images__
+[ 2016-02-14T21:18:24+08:00 ] ERR: (ThinkException) 非法操作:__js__
+[ 2016-02-14T21:19:23+08:00 ] ERR: (ThinkException) 非法操作:__images__
+[ 2016-02-14T21:19:23+08:00 ] ERR: (ThinkException) 非法操作:__js__
+[ 2016-02-14T21:19:23+08:00 ] ERR: (ThinkException) 非法操作:__css__
+[ 2016-02-14T21:20:59+08:00 ] ERR: (ThinkException) 非法操作:__images__
+[ 2016-02-14T21:20:59+08:00 ] ERR: (ThinkException) 非法操作:js
+[ 2016-02-14T21:21:27+08:00 ] ERR: (ThinkException) 非法操作:js
+[ 2016-02-14T21:21:27+08:00 ] ERR: (ThinkException) 非法操作:__public__
+[ 2016-02-14T21:22:05+08:00 ] ERR: (ThinkException) 非法操作:js
+[ 2016-02-14T21:23:16+08:00 ] ERR: (ThinkException) 非法操作:js
+[ 2016-02-14T21:36:21+08:00 ] ERR: (ThinkException) 非法操作:js
+[ 2016-02-14T21:37:58+08:00 ] ERR: (ThinkException) 非法操作:css
+[ 2016-02-14T21:37:58+08:00 ] ERR: (ThinkException) 非法操作:js
+[ 2016-02-14T21:37:58+08:00 ] ERR: (ThinkException) 非法操作:images
+[ 2016-02-14T21:37:58+08:00 ] ERR: (ThinkException) 非法操作:images
+[ 2016-02-14T21:38:35+08:00 ] ERR: (ThinkException) 非法操作:js
+[ 2016-02-14T21:38:35+08:00 ] ERR: (ThinkException) 非法操作:images
+[ 2016-02-14T21:39:04+08:00 ] ERR: (ThinkException) 非法操作:images
+[ 2016-02-14T21:39:04+08:00 ] ERR: (ThinkException) 非法操作:js
+[ 2016-02-14T21:40:10+08:00 ] ERR: (ThinkException) 非法操作:images
+[ 2016-02-14T21:40:10+08:00 ] ERR: (ThinkException) 非法操作:js
+[ 2016-02-14T21:40:12+08:00 ] ERR: (ThinkException) 非法操作:images
+[ 2016-02-14T21:40:12+08:00 ] ERR: (ThinkException) 非法操作:js
+[ 2016-02-14T21:42:01+08:00 ] ERR: (ThinkException) 非法操作:js
+[ 2016-02-14T21:42:20+08:00 ] ERR: (ThinkException) 非法操作:js
+[ 2016-02-14T21:42:33+08:00 ] ERR: (ThinkException) 非法操作:js
+[ 2016-02-14T21:42:35+08:00 ] ERR: (ThinkException) 非法操作:js
+[ 2016-02-14T21:43:02+08:00 ] ERR: (ThinkException) 非法操作:js
+[ 2016-02-14T22:19:19+08:00 ] 0.0.0.0 /Atodaynews/index.php/Register/checkName?username=fdf
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001867s ]
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.013328s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'fdf' ) LIMIT 1   [ RunTime:0.089181s ]
+
+[ 2016-02-14T22:19:51+08:00 ] 0.0.0.0 /Atodaynews/index.php/Register/checkName?username=555
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001695s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001893s ]
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.152049s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = '555' ) LIMIT 1   [ RunTime:0.027762s ]
+
+[ 2016-02-14T22:20:29+08:00 ] 0.0.0.0 /Atodaynews/index.php/Register/checkName?username=555
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001849s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002003s ]
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.039291s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = '555' ) LIMIT 1   [ RunTime:0.000478s ]
+
+[ 2016-02-14T22:22:13+08:00 ] 0.0.0.0 /Atodaynews/index.php/Register/checkName?username=555
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001940s ]
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.008967s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = '555' ) LIMIT 1   [ RunTime:0.000453s ]
+
+[ 2016-02-14T22:22:15+08:00 ] 0.0.0.0 /Atodaynews/index.php/Register/checkName?username=5555
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001954s ]
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.007085s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = '5555' ) LIMIT 1   [ RunTime:0.000507s ]
+
