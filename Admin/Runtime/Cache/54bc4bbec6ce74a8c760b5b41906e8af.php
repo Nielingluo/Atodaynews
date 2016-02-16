@@ -173,6 +173,9 @@
                     <li>
                         <a href="<?php echo U('user/userlist');?>"><i class="fa fa-fw fa-edit"></i> 用户管理</a>
                     </li>
+                    <li>
+                        <a href="<?php echo U('public/error');?>"><i class="fa fa-fw fa-edit"></i> 404页面</a>
+                    </li>
                  <!--
                  暂时注释于2016/2/13 
                     <li>

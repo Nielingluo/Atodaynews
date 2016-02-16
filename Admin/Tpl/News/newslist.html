@@ -40,7 +40,7 @@
 			                                        <td><{$vo.title}></td>
 			                                        <!-- <td><{$vo.content|mb_substr=###,0,36,'utf-8'}></td> -->
 			                                        <td><{$vo.newsclass}></td>
-			                                        <td><{$Think.session.username}></td>
+			                                        <td><{$vo.username}></td>
 			                                        <td><{$vo.date|date='Y/m/d H:i:s',###}></td>
 			                                        <td><a href="__URL__/newsedit/id/<{$vo.id}>">修改</a> | <a href="__URL__/newsdelete/id/<{$vo.id}>">删除</a></td>
 			                                    </tr>

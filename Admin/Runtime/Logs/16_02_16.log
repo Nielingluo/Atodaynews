@@ -1,0 +1,67 @@
+[ 2016-02-16T20:38:51+08:00 ] 0.0.0.0 /Atodaynews/index.php/Register/checkName?username=adminddd
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000958s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001151s ]
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.141927s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'adminddd' ) LIMIT 1   [ RunTime:0.220806s ]
+
+[ 2016-02-16T20:39:18+08:00 ] 0.0.0.0 /Atodaynews/index.php/Register/checkName?username=dsdddsd
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001098s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001275s ]
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.007158s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'dsdddsd' ) LIMIT 1   [ RunTime:0.000625s ]
+
+[ 2016-02-16T20:39:37+08:00 ] ERR: (ThinkException) Model:checkCode您所请求的方法不存在！
+[ 2016-02-16T20:42:40+08:00 ] 0.0.0.0 /Atodaynews/index.php/Register/checkName?username=dfsdsds
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001019s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001174s ]
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.011919s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'dfsdsds' ) LIMIT 1   [ RunTime:0.000564s ]
+
+[ 2016-02-16T20:44:09+08:00 ] 0.0.0.0 /Atodaynews/index.php/Register/checkName?username=dsfsd
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001094s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001274s ]
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.042158s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'dsfsd' ) LIMIT 1   [ RunTime:0.000461s ]
+
+[ 2016-02-16T20:57:01+08:00 ] 0.0.0.0 /Atodaynews/index.php/Register/checkName?username=admin
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.002814s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.048377s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.001008s ]
+
+[ 2016-02-16T20:57:05+08:00 ] 0.0.0.0 /Atodaynews/index.php/Register/checkName?username=1234
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.002472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002679s ]
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.009263s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = '1234' ) LIMIT 1   [ RunTime:0.000602s ]
+
+[ 2016-02-16T21:20:13+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-02-16T21:20:35+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-02-16T21:20:36+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-02-16T21:21:22+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-02-16T21:21:23+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-02-16T21:21:26+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-02-16T21:21:33+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-02-16T21:21:35+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-02-16T21:21:48+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-02-16T21:21:49+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-02-16T21:22:12+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-02-16T21:42:04+08:00 ] 0.0.0.0 /Atodaynews/index.php/Register/checkName?username=njm
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001260s ]
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.008063s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'njm' ) LIMIT 1   [ RunTime:0.000754s ]
+
+[ 2016-02-16T22:14:33+08:00 ] ERR: (ThinkException) Model:relation您所请求的方法不存在！
+[ 2016-02-16T22:15:24+08:00 ] ERR: (ThinkException) Model:relation您所请求的方法不存在！
+[ 2016-02-16T22:15:29+08:00 ] ERR: (ThinkException) Model:relation您所请求的方法不存在！
+[ 2016-02-16T22:54:04+08:00 ] ERR: (ThinkException) Model:relation您所请求的方法不存在！
+[ 2016-02-16T22:54:44+08:00 ] ERR: (ThinkException) Model:relation您所请求的方法不存在！
+[ 2016-02-16T22:55:06+08:00 ] ERR: (ThinkException) Model:relation您所请求的方法不存在！

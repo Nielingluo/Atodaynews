@@ -37,7 +37,7 @@
 			                                    <tr>
 			                                        <td><{$vo.id}></td>
 			                                        <td><{$vo.newsclass}></td>
-			                                        <td><{$Think.session.username}></td>
+			                                        <td><{$vo.uname}></td>
 			                                        <td><{$vo.date|date='Y/m/d H:i:s',###}></td>
 			                                        <td><a href="__URL__/newsclassedit/id/<{$vo.id}>">修改</a> | <a href="__URL__/del/id/<{$vo.id}>">删除</a></td>
 			                                    </tr>

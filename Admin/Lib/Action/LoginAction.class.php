@@ -11,7 +11,7 @@
    				$this->error('验证码错误！');
 			}
 
-			$m=M('User');
+			$m=D('User');
 			$where['username']=$username;
 			$where['password']=$password;
 			$arr=$m->where($where)->find();

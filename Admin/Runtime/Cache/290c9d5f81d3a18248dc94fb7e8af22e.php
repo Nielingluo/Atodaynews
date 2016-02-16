@@ -173,6 +173,9 @@
                     <li>
                         <a href="<?php echo U('user/userlist');?>"><i class="fa fa-fw fa-edit"></i> 用户管理</a>
                     </li>
+                    <li>
+                        <a href="<?php echo U('public/error');?>"><i class="fa fa-fw fa-edit"></i> 404页面</a>
+                    </li>
                  <!--
                  暂时注释于2016/2/13 
                     <li>
@@ -237,7 +240,7 @@
 			                                        <td><?php echo ($vo["title"]); ?></td>
 			                                        <!-- <td><?php echo (mb_substr($vo["content"],0,36,'utf-8')); ?></td> -->
 			                                        <td><?php echo ($vo["newsclass"]); ?></td>
-			                                        <td><?php echo (session('username')); ?></td>
+			                                        <td><?php echo ($vo["username"]); ?></td>
 			                                        <td><?php echo (date('Y/m/d H:i:s',$vo["date"])); ?></td>
 			                                        <td><a href="__URL__/newsedit/id/<?php echo ($vo["id"]); ?>">修改</a> | <a href="__URL__/newsdelete/id/<?php echo ($vo["id"]); ?>">删除</a></td>
 			                                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>

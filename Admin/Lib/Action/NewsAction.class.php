@@ -2,21 +2,16 @@
 	class NewsAction extends Action{
 		/*新闻列表页*/
 		public function newslist(){
-			$m=M('News');
+			$m=D('News');
 			import('ORG.Util.Page');// 导入分页类
 			$count = $m->count();// 查询满足要求的总记录数
 			$page  = new Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
 			$show  = $page->show();// 分页显示输出
-			$list=$m->order('id desc')->limit($page->firstRow.','.$page->listRows)->select();
+			$list=$m->order('id desc')->limit($page->firstRow.','.$page->listRows)->relation(true)->select();
 			//dump($list);
 			$this->assign('list',$list);
 			$this->assign('page',$show);// 赋值分页输出
-			//判断用户是否登陆 session
-			if(isset($_SESSION['username']) && $_SESSION['username'] != ''){
-				$this->display();
-			}else{
-				$this->redirect('Login/login');
-			}
+			$this->display();
 		}
 		/*添加新闻*/
 		public function newsadd(){
@@ -36,7 +31,8 @@
 				$info =  $upload->getUploadFileInfo();
 			}
 			$m->create();
-			$m->date=time();  //数据库插入当前时间
+			//$m->date=time();  //数据库插入当前时间
+			//$m->uid=$_SESSION['id'];
 			$m->filename = $info[0]['savename']; // 保存上传的照片根据需要自行组装
 			$idnum=$m->add();
 			if($idnum>0){
@@ -96,8 +92,9 @@
 
 		/*新闻分类页*/
 		public function newsclass(){
-			$m=M('Newsclass');
-			$lclass=$m->select();
+			$m=D('Newsclass');
+			$lclass=$m->relation(true)->select();
+			//dump($lclass);
 			$this->assign('list',$lclass);
 			$this->display();
 		}
@@ -109,7 +106,7 @@
 		public function newsclassadded(){
 			$m=D('Newsclass');
 			$m->create();
-			$m->date=time();  //数据库插入当前时间
+			//$m->date=time();  //数据库插入当前时间
 			$idnum=$m->add();
 			if($idnum>0){
 				$this->success('成功添加分类，跳转中……',U('news/newsclass'));

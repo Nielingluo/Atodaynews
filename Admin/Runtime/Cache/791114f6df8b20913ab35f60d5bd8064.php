@@ -237,7 +237,7 @@
 		                                	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
 			                                        <td><?php echo ($vo["id"]); ?></td>
 			                                        <td><?php echo ($vo["newsclass"]); ?></td>
-			                                        <td><?php echo (session('username')); ?></td>
+			                                        <td><?php echo ($vo["uname"]); ?></td>
 			                                        <td><?php echo (date('Y/m/d H:i:s',$vo["date"])); ?></td>
 			                                        <td><a href="__URL__/newsclassedit/id/<?php echo ($vo["id"]); ?>">修改</a> | <a href="__URL__/del/id/<?php echo ($vo["id"]); ?>">删除</a></td>
 			                                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
